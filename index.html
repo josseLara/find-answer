@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login con (HTML | CSS | JS)" />
+    <meta name="author" content="José Lara" />
+
+    <meta name="copyright" content="Propietario del copyright" />
+    <title>Awers</title>
+    <!-- Load TensorFlow.js. This is required to use the qna model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+    <!-- Load the qna model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
+    <!--  -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <div class="header">
+            <div class="menu-circle"></div>
+        </div>
+        <div class="wrapper">
+
+            <!-- code -->
+
+            <form class="form-floating form" action="#">
+                <h1>Only questions and answers in english</h1>
+                <div class="form-floating mt-5">
+                    <textarea class="form-control" placeholder="Text" id="txt"></textarea>
+                    <label for="floatingTextarea">Text</label>
+                </div>
+
+                <div class="input-group mb-3 mt-5">
+                    <span class="input-group-text"><i class='bx bx-clipboard'></i></span>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="question" placeholder="Pregunta">
+                        <label for="floatingInputGroup1">Question ?</label>
+                    </div>
+                </div>
+                <button class="sketch-button btn-send">Enviar</button>
+                
+            </form>
+
+            <!-- respuesta -->
+            <div class="answer">
+                <h2>Answer Here</h2>
+                <div class="answer__content">
+                    <p class="answer__p">....</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="overlay-app"></div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress">
+        <svg class="pl" viewBox="0 0 64 64" width="64px" height="64px" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#000" />
+                    <stop offset="100%" stop-color="#fff" />
+                </linearGradient>
+                <mask id="grad-mask">
+                    <rect x="0" y="0" width="64" height="64" fill="url(#grad)" />
+                </mask>
+            </defs>
+            <circle class="pl__ring" cx="32" cy="32" r="26" fill="none" stroke="hsl(223,100%,55%)" stroke-width="12"
+                stroke-dasharray="169.65 169.65" stroke-dashoffset="-127.24" stroke-linecap="round"
+                transform="rotate(135)" />
+            <g fill="hsl(223,90%,55%)">
+                <circle class="pl__ball1" cx="32" cy="45" r="6" transform="rotate(14)" />
+                <circle class="pl__ball2" cx="32" cy="48" r="3" transform="rotate(-21)" />
+            </g>
+            <g mask="url(#grad-mask)">
+                <circle class="pl__ring" cx="32" cy="32" r="26" fill="none" stroke="hsl(283,92%,55%)" stroke-width="12"
+                    stroke-dasharray="169.65 169.65" stroke-dashoffset="-127.24" stroke-linecap="round"
+                    transform="rotate(135)" />
+                <g fill="hsl(283,90%,55%)">
+                    <circle class="pl__ball1" cx="32" cy="45" r="6" transform="rotate(14)" />
+                    <circle class="pl__ball2" cx="32" cy="48" r="3" transform="rotate(-21)" />
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <!-- scripts -->
+    <script src="js/index.js"></script>
+
+   
+
+</body>
+
+</html>
